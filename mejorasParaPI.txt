@@ -1,0 +1,12 @@
+MEJORAS AL FRONTEND
+1. Ubicar bien la NavBar
+2. En la misma NavBar ver la posicibilidad de colocar filtros, ordenamientos, searchbar y add activity.
+3. Paginación con los botones Adelante y Atrás.
+4. El campo que recibe el foco debe mostrar la validación
+5. Redireccionar el form crear actividad al Home cuando finalice la creación de la actividad.
+6. Utilizar las respuestas de los éxitos y de errores del backend
+
+BUGS DETECTADOS
+1. Al escoger filtro por actividad y luego ver el detalle de uno de los paises que tienen esta actividad, cuando regreso a los resultados del filtro por actividad me muestra todos los paises en vez de solo los que elegí en el filtro por actividad.
+
+2. Al ordenar por población, entrar al detalle de algún pais y regresar al home, quita el ordenamiento que había establecido.

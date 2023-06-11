@@ -31,7 +31,9 @@ function Home() {
 	);
 
 	useEffect(() => {
+		// axios.get("http://localhost:3001/activities").then((activity) => setActivities(activity.data));
 		axios.get("/activities").then((activity) => setActivities(activity.data));
+		// axios.get("http://localhost:3001/continents").then((continent) => setContinents(continent.data));
 		axios.get("/continents").then((continent) => setContinents(continent.data));
 	}, []);
 
