@@ -21,7 +21,7 @@ import {
 export function getCountries() {
 	return function (dispatch) {
 		axios
-			.get("http://localhost:3001/countries")
+			.get("/countries")
 			.then((countriesFromDB) =>
 				dispatch({
 					type: GET_COUNTRIES,
@@ -34,16 +34,14 @@ export function getCountries() {
 
 export function postActivity(payload) {
 	return function () {
-		axios
-			.post("http://localhost:3001/activities", payload)
-			.then((response) => response.data);
+		axios.post("/activities", payload).then((response) => response.data);
 	};
 }
 
 export function findCountry(name) {
 	return function (dispatch) {
 		axios
-			.get(`http://localhost:3001/countries?name=${name}`)
+			.get(`/countries?name=${name}`)
 			.then((findedCountryFromDB) =>
 				dispatch({
 					type: FIND_COUNTRY,
@@ -84,7 +82,7 @@ export function orderCountriesByPopulation(payload) {
 
 export function getDetail(id) {
 	return function (dispatch) {
-		axios.get(`http://localhost:3001/countries/${id}`).then((response) =>
+		axios.get(`/countries/${id}`).then((response) =>
 			dispatch({
 				type: GET_DETAIL,
 				payload: response.data,
