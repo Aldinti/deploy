@@ -4,6 +4,7 @@ import { getCountries, postActivity } from "./../../actions/index";
 import styles from "./FormCreateActivity.module.css";
 import validate from "../../validate.js";
 import { BtnGoBack } from "./../BtnGoBack/BtnGoBack";
+import { Nav } from "./../Nav/Nav";
 
 function FormCreateActivity() {
 	const dispatch = useDispatch();
@@ -94,113 +95,116 @@ function FormCreateActivity() {
 	}, [dispatch]);
 
 	return (
-		<div className={styles.loginbox}>
-			<h1 className={styles.h1box}>Crear Actividad(es)</h1>
-			<form
-				className={styles.formbox}
-				onSubmit={(event) => handleSubmit(event)}
-			>
-				<div className={styles.userbox}>
-					<input
-						className={styles.inputbox}
-						type='text'
-						name='name'
-						value={newActivity.name}
-						onChange={(event) => handleChange(event)}
-					/>
-					<label className={styles.labelbox}>Nombre: </label>
-				</div>
-				<span className={styles.spanCrearAct}>{errors.name}</span>
-				{/* if(newActivity.name.length === 0) return (<span className={styles.spanCrearAct}>Debe ingresar un nombre</span> */}
-				<div className={styles.userbox}>
-					<input
-						className={styles.inputbox}
-						type='number'
-						name='difficulty'
-						min={1}
-						max={5}
-						value={newActivity.difficulty}
-						onChange={(event) => handleChange(event)}
-					/>
-					<label className={styles.labelbox}>Dificultad: </label>
-				</div>
-				<span className={styles.spanCrearAct}>{errors.difficulty}</span>
-				{/* if(newActivity.difficulty.length === 0) return (<span className={styles.spanCrearAct}>Debe ingresar un nivel de dificultad</span> */}
-				<div className={styles.userbox}>
-					<input
-						className={styles.inputbox}
-						type='number'
-						name='duration'
-						min={1}
-						max={24}
-						value={newActivity.duration}
-						onChange={(event) => handleChange(event)}
-					/>
-					<label className={styles.labelbox}>Duración: </label>
-				</div>
-				<span className={styles.spanCrearAct}>{errors.duration}</span>
-				{/* if(newActivity.duration.length === 0) return (<span className={styles.spanCrearAct}>Debe ingresar una duración</span> */}
-				<div className={styles.userbox}>
-					{/* <label className={styles.labelbox}>Temporada</label><br /><br />	 */}
-					<select
-						className={styles.selectbox}
-						name='season'
-						id='season'
-						onChange={(event) => handleChange(event)}
-					>
-						<option value='Temporada'>Temporada</option>
-						<option value='Primavera'>Primavera</option>
-						<option value='Verano'>Verano</option>
-						<option value='Otoño'>Otoño</option>
-						<option value='Invierno'>Invierno</option>
-					</select>
-				</div>
-				<span className={styles.spanCrearAct}>{errors.season}</span>
-				{/* if(newActivity.season.length === 0) return (<span className={styles.spanCrearAct}>Debe seleccionar una temporada</span> */}
-				<div className={styles.userbox}>
-					<label className={styles.labelbox}>Países: </label>
-					<br />
-					<br />
-					<select
-						className={styles.selectbox}
-						name='countries'
-						onChange={(event) => handleChange(event)}
-					>
-						{countries.map((country) => (
-							<option
-								key={country.id}
-								type='text'
-								value={country.id}
-							>
-								{country.name}
-							</option>
-						))}
-					</select>
-					<ul>
-						{newActivity.countries.map((country) => (
-							<li className={styles.libox}>
-								{country}
-								<button
-									key={country}
-									onClick={() => handleDeleteCountrySelect(country)}
-								>
-									X
-								</button>
-							</li>
-						))}
-					</ul>
-					{/* <ul><li className={styles.libox}>{newActivity.countries.map((country) => country += "+" )}</li></ul> */}
-				</div>
-				<span className={styles.spanCrearAct}>{errors.countries}</span>
-				{/* if(newActivity.countries.length === 0) return (<span className={styles.spanCrearAct}>Debe seleccionar al menos un país</span>) */}
-				<button
-					type='submit'
-					className={styles.abox}
+		<div>
+			<Nav />
+			<div className={styles.loginbox}>
+				<h1 className={styles.h1box}>Crear Actividad(es)</h1>
+				<form
+					className={styles.formbox}
+					onSubmit={(event) => handleSubmit(event)}
 				>
-					Crear Actividad <span className={styles.spanbox}></span>
-				</button>
-				<BtnGoBack />
-			</form>
+					<div className={styles.userbox}>
+						<input
+							className={styles.inputbox}
+							type='text'
+							name='name'
+							value={newActivity.name}
+							onChange={(event) => handleChange(event)}
+						/>
+						<label className={styles.labelbox}>Nombre: </label>
+					</div>
+					<span className={styles.spanCrearAct}>{errors.name}</span>
+					{/* if(newActivity.name.length === 0) return (<span className={styles.spanCrearAct}>Debe ingresar un nombre</span> */}
+					<div className={styles.userbox}>
+						<input
+							className={styles.inputbox}
+							type='number'
+							name='difficulty'
+							min={1}
+							max={5}
+							value={newActivity.difficulty}
+							onChange={(event) => handleChange(event)}
+						/>
+						<label className={styles.labelbox}>Dificultad: </label>
+					</div>
+					<span className={styles.spanCrearAct}>{errors.difficulty}</span>
+					{/* if(newActivity.difficulty.length === 0) return (<span className={styles.spanCrearAct}>Debe ingresar un nivel de dificultad</span> */}
+					<div className={styles.userbox}>
+						<input
+							className={styles.inputbox}
+							type='number'
+							name='duration'
+							min={1}
+							max={24}
+							value={newActivity.duration}
+							onChange={(event) => handleChange(event)}
+						/>
+						<label className={styles.labelbox}>Duración: </label>
+					</div>
+					<span className={styles.spanCrearAct}>{errors.duration}</span>
+					{/* if(newActivity.duration.length === 0) return (<span className={styles.spanCrearAct}>Debe ingresar una duración</span> */}
+					<div className={styles.userbox}>
+						{/* <label className={styles.labelbox}>Temporada</label><br /><br />	 */}
+						<select
+							className={styles.selectbox}
+							name='season'
+							id='season'
+							onChange={(event) => handleChange(event)}
+						>
+							<option value='Temporada'>Temporada</option>
+							<option value='Primavera'>Primavera</option>
+							<option value='Verano'>Verano</option>
+							<option value='Otoño'>Otoño</option>
+							<option value='Invierno'>Invierno</option>
+						</select>
+					</div>
+					<span className={styles.spanCrearAct}>{errors.season}</span>
+					{/* if(newActivity.season.length === 0) return (<span className={styles.spanCrearAct}>Debe seleccionar una temporada</span> */}
+					<div className={styles.userbox}>
+						<label className={styles.labelbox}>Países: </label>
+						<br />
+						<br />
+						<select
+							className={styles.selectbox}
+							name='countries'
+							onChange={(event) => handleChange(event)}
+						>
+							{countries.map((country) => (
+								<option
+									key={country.id}
+									type='text'
+									value={country.id}
+								>
+									{country.name}
+								</option>
+							))}
+						</select>
+						<ul>
+							{newActivity.countries.map((country) => (
+								<li className={styles.libox}>
+									{country}
+									<button
+										key={country}
+										onClick={() => handleDeleteCountrySelect(country)}
+									>
+										X
+									</button>
+								</li>
+							))}
+						</ul>
+						{/* <ul><li className={styles.libox}>{newActivity.countries.map((country) => country += "+" )}</li></ul> */}
+					</div>
+					<span className={styles.spanCrearAct}>{errors.countries}</span>
+					{/* if(newActivity.countries.length === 0) return (<span className={styles.spanCrearAct}>Debe seleccionar al menos un país</span>) */}
+					<button
+						type='submit'
+						className={styles.abox}
+					>
+						Crear Actividad <span className={styles.spanbox}></span>
+					</button>
+					<BtnGoBack />
+				</form>
+			</div>
 		</div>
 	);
 }

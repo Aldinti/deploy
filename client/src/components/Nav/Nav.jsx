@@ -8,7 +8,7 @@ export const Nav = () => {
 			<NavLink
 				to='/home'
 				className={({ isActive, isPending }) =>
-					isPending ? styles.pending : isActive ? styles.active : " "
+					isActive ? styles.active : isPending ? styles.pending : " - "
 				}
 			>
 				Home
@@ -16,7 +16,7 @@ export const Nav = () => {
 			<NavLink
 				to='/activities'
 				className={({ isActive, isPending }) =>
-					isPending ? styles.pending : isActive ? styles.active : " "
+					isActive ? styles.active : isPending ? styles.pending : " - "
 				}
 			>
 				Create activity
@@ -24,7 +24,7 @@ export const Nav = () => {
 			<NavLink
 				to='/about'
 				className={({ isActive, isPending }) =>
-					isPending ? styles.pending : isActive ? styles.active : " "
+					isActive ? styles.active : isPending ? styles.pending : " - "
 				}
 			>
 				About
