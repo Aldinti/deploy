@@ -8,7 +8,8 @@ import About from "./components/About/About";
 import { Error404 } from "./components/Error404/Error404";
 import axios from "axios";
 
-axios.defaults.baseURL = "http://localhost:3001";
+// axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://deploy-production-0014.up.railway.app";
 
 function App() {
 	return (
