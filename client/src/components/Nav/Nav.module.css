@@ -1,0 +1,11 @@
+.active{
+    font-weight: bold;
+    color: #61dafb;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.pending{
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
