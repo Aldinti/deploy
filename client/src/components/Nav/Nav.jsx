@@ -8,7 +8,7 @@ export const Nav = () => {
 			<NavLink
 				to='/home'
 				className={({ isActive, isPending }) =>
-					isPending ? pending : isActive ? { active } : " "
+					isPending ? { pending } : isActive ? { active } : " "
 				}
 			>
 				Home
@@ -16,7 +16,7 @@ export const Nav = () => {
 			<NavLink
 				to='/activities'
 				className={({ isActive, isPending }) =>
-					isPending ? pending : isActive ? { active } : " "
+					isPending ? { pending } : isActive ? { active } : " "
 				}
 			>
 				Create activity
@@ -24,7 +24,7 @@ export const Nav = () => {
 			<NavLink
 				to='/about'
 				className={({ isActive, isPending }) =>
-					isPending ? pending : isActive ? { active } : " "
+					isPending ? { pending } : isActive ? { active } : " "
 				}
 			>
 				About
