@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { active, pending } from "./Nav.module.css";
+import styles from "./Nav.module.css";
 
 export const Nav = () => {
 	return (
@@ -8,7 +8,7 @@ export const Nav = () => {
 			<NavLink
 				to='/home'
 				className={({ isActive, isPending }) =>
-					isPending ? { pending } : isActive ? { active } : " "
+					isPending ? styles.pending : isActive ? styles.active : " "
 				}
 			>
 				Home
@@ -16,7 +16,7 @@ export const Nav = () => {
 			<NavLink
 				to='/activities'
 				className={({ isActive, isPending }) =>
-					isPending ? { pending } : isActive ? { active } : " "
+					isPending ? styles.pending : isActive ? styles.active : " "
 				}
 			>
 				Create activity
@@ -24,7 +24,7 @@ export const Nav = () => {
 			<NavLink
 				to='/about'
 				className={({ isActive, isPending }) =>
-					isPending ? { pending } : isActive ? { active } : " "
+					isPending ? styles.pending : isActive ? styles.active : " "
 				}
 			>
 				About
